@@ -9,7 +9,6 @@ test('test', async ({ page }) =>
     const browser = await chromium.launch();
     const delay = 1000;
     //await page.waitForTimeout(delay);
-    //--trace on
     await chromium.launch({headless: false, slowMo: 1000})
     //System STD
     const pageUrl = 'https://sit.ada-soft.com/AdaStorebackSTD/login'

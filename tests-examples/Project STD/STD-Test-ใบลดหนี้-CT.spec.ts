@@ -8,7 +8,6 @@ test('test', async ({ page }) =>
     const browser = await chromium.launch();
     const delay = 1000;
     //await page.waitForTimeout(delay);
-    //--trace on
     await chromium.launch({headless: false, slowMo: 1000})
     const productid = 'PP0004X'
     const productid2 = 'PP0004X1' //ทดสอบผิด
