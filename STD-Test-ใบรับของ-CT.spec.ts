@@ -3,7 +3,7 @@ import { test, expect, chromium } from '@playwright/test';
 import { evaluateXPathToBoolean } from 'fontoxpath';
 import { evaluateXPathToString } from 'fontoxpath';
 import { Client } from 'pg';
-//---
+//----
 
 test('test', async ({ page }) => 
 {
