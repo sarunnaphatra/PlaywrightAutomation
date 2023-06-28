@@ -1,6 +1,5 @@
 import { test, expect, chromium } from '@playwright/test';
 import { Client } from 'pg';
-//import { Client } from 'pg'DCC;
 
 
 test('test', async ({ page }) => 
