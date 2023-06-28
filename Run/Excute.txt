@@ -1,0 +1,3 @@
+npx playwright test STD-Test-ใบรับของ-CT.spec.ts --debug
+npx playwright test STD-Test-ใบรับของ-CT.spec.ts --ui
+npx playwright test STD-Test-ใบรับของ-CT.spec.ts --codegen
