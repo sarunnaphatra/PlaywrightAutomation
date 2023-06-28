@@ -5,6 +5,7 @@ test('test', async ({ page }) => {
   await chromium.launch({headless: false, slowMo: 1000})
   const productid = 'PP0004X'
   const productname = 'PEP-TEST04'
+  //const productid = 'PP0004X'
   test.setTimeout(5000000);
   await test.slow();
   // Get screen dimensions manually
