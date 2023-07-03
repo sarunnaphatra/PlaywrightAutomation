@@ -284,6 +284,9 @@ test('test', async ({ page }) =>
                         VerifyVat();
                         //console.log('1.>>>>>>>>>>>>>>>>>>>>>>>>>')
                     }  
+                    // เพิ่มเงื่อนไขการคำนวณภาษีแบบ แยกนอก <<<<<<<<<<<<<<<<<<<< 1
+
+
                     //GetVat();
                     await page.waitForTimeout(delay);
                     //subFunctionVat()
@@ -314,7 +317,9 @@ test('test', async ({ page }) =>
               
                         VerifyVat();
                         //console.log('1.>>>>>>>>>>>>>>>>>>>>>>>>>')
-                    }        
+                    }      
+                    
+                    // เพิ่มเงื่อนไขการคำนวณภาษีแบบ แยกนอก <<<<<<<<<<<<<<<<<<<<2
                 
                     await page.waitForTimeout(2000);
                     //await page.pause();
