@@ -5,12 +5,15 @@ import { Client } from 'pg';
 test('test', async ({ page }) => {
   const browser = await chromium.launch();
   await chromium.launch({ headless: false, slowMo: 1000 })
-  const productid = 'PP0006'
-  const productid2 = 'PPX0006'
-  //const productname = 'สินค้าทดสอบระบบ 4'
-  const productname = 'สินค้าทดสอบระบบ 6 (ไม่อนุญาตลด)' //116
+ 
+  //-------------------------------------------------------------------
+  const productid = 'PP0006'   //เปลี่ยนรหัสสินค้า
+  const productid2 = 'PPX0006' //เปลี่ยนบาร์โค้ดสินค้า (บาร์โค้ดที่ 2)
+  const productname = 'สินค้าทดสอบระบบ 4'   //เปลี่ยนชื่อสินค้า
+  //const productname = 'สินค้าทดสอบระบบ 6 (ไม่อนุญาตลด)' //Ref.116 
+  //-------------------------------------------------------------------
   const adname = 'STD-Sit-ProforPC '
-  //const productid = 'PP0004X'
+
   const delay = 1000
   test.setTimeout(5000000);
   await test.slow();
@@ -112,10 +115,7 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(delay);
       await page.getByRole('cell', { name: '31' }).click();
       await page.waitForTimeout(delay);
-      //await page.pause();
-      await page.locator('#odvPdtContentInfo1 > div.row > div.col-xs-12.col-sm-7.col-md-8.col-lg-8 > div:nth-child(11) > div > div > div > div:nth-child(2) > div > div:nth-child(2) > label > span').click();
-      //await page.getByText('อนุญาตลด').click();   //Ref.166 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< เปิดใช้งานบรรทัดนี้เพื่อสร้างสินค้าไม่อนุญาตลด
-      //await page.pause();
+      await page.locator('#odvPdtContentInfo1 > div.row > div.col-xs-12.col-sm-7.col-md-8.col-lg-8 > div:nth-child(11) > div > div > div > div:nth-child(2) > div > div:nth-child(2) > label > span').click(); //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< เปิดใช้งานบรรทัดนี้เพื่อสร้างสินค้าไม่อนุญาตลด
       await page.waitForTimeout(delay);
       //กดบันทึกสร้างสินค้า      
       await page.getByRole('button', { name: 'บันทึก' }).click();

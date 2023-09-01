@@ -83,6 +83,7 @@ test('test', async ({ page }) => {
     await page.click('#otbodyPdtPP000500007');
     await page.click('#otbodyPdtPP000600025');
     await page.click('#otbodyPdtPP000600007');
+    await page.waitForTimeout(delay);
     await page.getByRole('button', { name: 'เลือก', exact: true }).click();
     await page.waitForTimeout(delay);
     await page.locator('#ohdFCXtdPriceRet1').fill('100');
@@ -147,7 +148,7 @@ test('test', async ({ page }) => {
       const text1 = await elements1.innerText();
       const text2 = await elements2.innerText();
       const text3 = await elements3.innerText();
-      console.log('\x1b[36m%s\x1b[0m', '', '[เอกสารหมายเลข] : ', storedValue, ' [ผู้สร้างเอกสาร] : ', text1, ' [สถานะเอกสาร] : ', text2, ' [สถานะอนุมัติ] : ', text3);
+      console.log('\x1b[36m%s\x1b[0m', '-', '[เอกสารหมายเลข] : ', storedValue, ' [ผู้สร้างเอกสาร] : ', text1, ' [สถานะเอกสาร] : ', text2, ' [สถานะอนุมัติ] : ', text3);
       await page.waitForTimeout(delay);
       await page.getByRole('button', { name: 'ย้อนกลับ' }).click();
       await page.waitForTimeout(delay);
@@ -164,6 +165,108 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(delay);
       console.log('\x1b[32m%s\x1b[0m', '[ลบเอกสารเรียบร้อย] ');
       await page.waitForTimeout(delay);
+
+
+      console.log('\x1b[36m%s\x1b[0m', '[ทำการสร้างเอกสารอีกครั้ง เพื่อทดสอบการยกเลิกเอกสาร] ');
+      await page.waitForTimeout(delay);
+      await page.getByRole('button', { name: '+' }).click();
+      await page.waitForTimeout(delay);
+      await page.getByRole('button', { name: '+' }).click();
+      await page.waitForTimeout(delay);
+      //await page.getByRole('combobox', { name: 'รหัสสินค้า' }).click();
+      await page.locator('#odvModalsectionBodyPDT > div > div:nth-child(1) > div > div > div > div.col-lg-2.col-md-2 > div > div > button > span > span').click();
+      await page.waitForTimeout(delay);
+      await page.locator('#bs-select-23-0 > span').click();
+      await page.waitForTimeout(delay);
+      // await page.locator('#bs-select-11-0').click();
+      // await page.waitForTimeout(delay);
+      await page.getByPlaceholder('กรอกคำค้นหา').click();
+      await page.waitForTimeout(delay);
+      await page.getByPlaceholder('กรอกคำค้นหา').fill('สินค้าทดสอบ');
+      await page.waitForTimeout(delay);
+      await page.getByPlaceholder('กรอกคำค้นหา').press('Enter');
+      await page.waitForTimeout(delay);
+      await page.click('#ospClickShowPDTConfig');
+      await page.waitForTimeout(delay);
+      await page.click('[name="ordBWStaTopPdt"][value="2"]');
+      await page.waitForTimeout(delay);
+      await page.locator('#oetMaxPage').fill('20');
+      await page.locator('#oetPerPage').fill('20');
+      await page.click('#obtPdtConfigSave');
+      await page.waitForTimeout(2000);
+      await page.click('#otbodyPdtPP000100025');
+      await page.click('#otbodyPdtPP000100007');
+      await page.click('#otbodyPdtPP000200025');
+      await page.click('#otbodyPdtPP000200007');
+      await page.click('#otbodyPdtPP000300025');
+      await page.click('#otbodyPdtPP000300007');
+      await page.click('#otbodyPdtPP000400025');
+      await page.click('#otbodyPdtPP000400007');
+      await page.click('#otbodyPdtPP000500025');
+      await page.click('#otbodyPdtPP000500007');
+      await page.click('#otbodyPdtPP000600025');
+      await page.click('#otbodyPdtPP000600007');
+      await page.waitForTimeout(delay);
+      await page.getByRole('button', { name: 'เลือก', exact: true }).click();
+      await page.waitForTimeout(delay);
+      await page.locator('#ohdFCXtdPriceRet1').fill('100');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet1').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet2').fill('20');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet2').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet3').fill('200');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet3').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet4').fill('10');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet4').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet5').fill('300');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet5').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet6').fill('320');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet6').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet7').fill('15');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet7').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet8').fill('400');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet8').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet9').fill('35');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet9').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet10').fill('66');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet10').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet11').fill('999');
+      await page.waitForTimeout(300);
+      await page.getByRole('button', { name: 'บันทึก' }).click();
+      await page.waitForTimeout(5000);
+      console.log('\x1b[32m%s\x1b[0m', '[สร้างเอกสารเรียบร้อย] ');
+      await page.waitForTimeout(300);
+      await page.click('#obtBtnSpaCancel');
+      await page.waitForTimeout(delay);
+      await page.click('#obtBtnBack');
+      await page.waitForTimeout(delay);
+      if (elements1 && elements2 && elements3) {
+        const text1 = await elements1.innerText();
+        const text2 = await elements2.innerText();
+        const text3 = await elements3.innerText();
+        console.log('\x1b[36m%s\x1b[0m', '', '[เอกสารหมายเลข] : ', storedValue, ' [ผู้สร้างเอกสาร] : ', text1, ' [สถานะเอกสาร] : ', text2, ' [สถานะอนุมัติ] : ', text3);
+      }
+      
+      //-----------------------------------------------------------------------------------------------------------------------------------
       console.log('\x1b[36m%s\x1b[0m', '[ทำการสร้างเอกสารอีกครั้ง เพื่อทดสอบการแก้ไขและอนุมัติเอกสาร] ');
       await page.waitForTimeout(delay);
       await page.getByRole('button', { name: '+' }).click();
@@ -203,6 +306,7 @@ test('test', async ({ page }) => {
       await page.click('#otbodyPdtPP000500007');
       await page.click('#otbodyPdtPP000600025');
       await page.click('#otbodyPdtPP000600007');
+      await page.waitForTimeout(delay);
       await page.getByRole('button', { name: 'เลือก', exact: true }).click();
       await page.waitForTimeout(delay);
       await page.locator('#ohdFCXtdPriceRet1').fill('100');
@@ -297,9 +401,28 @@ test('test', async ({ page }) => {
           const text1 = await elementsD1.innerText();
           const text2 = await elementsD2.innerText();
           const text3 = await elementsD3.innerText();
-          console.log('\x1b[36m%s\x1b[0m', '', '[ตรวจสอบเอกสาร]', '[เลขที่] : ', text1, ' [สถานะ] : ', text2, ' [วันที่อนุมัติ] : ', text3);
+          console.log('\x1b[36m%s\x1b[0m', '-', '[ตรวจสอบเอกสาร]', '[เลขที่] : ', text1, ' [สถานะ] : ', text2, ' [วันที่อนุมัติ] : ', text3);
           await page.waitForTimeout(7000);
+          console.log('\x1b[36m%s\x1b[0m', 'ทดสอบการคัดลอกเอกสาร และ เพิ่มไฟล์แนบ', '[เอกสารเลขที่] : ', text1, ' [สถานะ] : ', text2, ' [วันที่อนุมัติ] : ', text3);
         }
+        //await page.click('.text-center.xCNIconTable');
+        await page.locator('#otrPdtSpa0 > td:nth-child(12) > img').click();
+        await page.waitForTimeout(delay);
+        await page.click('#obtBtnSpaCopy');
+        await page.waitForTimeout(delay);
+        await page.click('.btn xCNBTNPrimery');
+        await page.waitForTimeout(delay);
+        const elementText = await page.$eval('.modal-body', (element) => element.textContent);
+        await page.waitForTimeout(delay);
+        console.log('\x1b[36m%s\x1b[0m', elementText); 
+        await page.waitForTimeout(delay);
+        await page.click('.btn xCNBTNPrimery xCNBTNDefult2Btn');
+        await page.waitForTimeout(delay);
+
+        
+        
+
+        await page.pause();
       }
     }
 
