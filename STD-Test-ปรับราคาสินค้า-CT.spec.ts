@@ -63,24 +63,26 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(delay);
     await page.getByPlaceholder('กรอกคำค้นหา').press('Enter');
     await page.waitForTimeout(delay);
-    await page.getByRole('cell', { name: 'PP0001' }).nth(1).click();
+    await page.click('#ospClickShowPDTConfig');
     await page.waitForTimeout(delay);
-    await page.getByRole('row', { name: 'PP0001 สินค้าทดสอบระบบ 1 กล่อง PPX0001' }).getByRole('cell', { name: 'PP0001' }).click();
+    await page.click('[name="ordBWStaTopPdt"][value="2"]');
     await page.waitForTimeout(delay);
-    await page.getByRole('cell', { name: 'PP0002' }).nth(1).click();
-    await page.waitForTimeout(delay);
-    await page.getByRole('row', { name: 'PP0002 สินค้าทดสอบระบบ 2 กล่อง PPX0002' }).getByRole('cell', { name: 'PP0002' }).click();
-    await page.waitForTimeout(delay);
-    await page.getByRole('cell', { name: 'PP0003' }).first().click();
-    await page.waitForTimeout(delay);
-    await page.getByRole('cell', { name: 'PP0004' }).nth(1).click();
-    await page.waitForTimeout(delay);
-    await page.getByRole('row', { name: 'PP0004 สินค้าทดสอบระบบ 4 กล่อง PPX0004' }).getByRole('cell', { name: 'PP0004' }).click();
-    await page.waitForTimeout(delay);
-    await page.getByRole('cell', { name: 'PP0005' }).nth(1).click();
-    await page.waitForTimeout(delay);
-    await page.getByRole('row', { name: 'PP0005 สินค้าทดสอบระบบ 5 (ไม่อนุญาตลด) กล่อง PPX0005' }).getByRole('cell', { name: 'PP0005' }).click();
-    await page.waitForTimeout(delay);
+    await page.locator('#oetMaxPage').fill('20');
+    await page.locator('#oetPerPage').fill('20');
+    await page.click('#obtPdtConfigSave');
+    await page.waitForTimeout(2000);
+    await page.click('#otbodyPdtPP000100025');
+    await page.click('#otbodyPdtPP000100007');
+    await page.click('#otbodyPdtPP000200025');
+    await page.click('#otbodyPdtPP000200007');
+    await page.click('#otbodyPdtPP000300025');
+    await page.click('#otbodyPdtPP000300007');
+    await page.click('#otbodyPdtPP000400025');
+    await page.click('#otbodyPdtPP000400007');
+    await page.click('#otbodyPdtPP000500025');
+    await page.click('#otbodyPdtPP000500007');
+    await page.click('#otbodyPdtPP000600025');
+    await page.click('#otbodyPdtPP000600007');
     await page.getByRole('button', { name: 'เลือก', exact: true }).click();
     await page.waitForTimeout(delay);
     await page.locator('#ohdFCXtdPriceRet1').fill('100');
@@ -116,6 +118,14 @@ test('test', async ({ page }) => {
     await page.locator('#ohdFCXtdPriceRet8').press('Tab');
     await page.waitForTimeout(300);
     await page.locator('#ohdFCXtdPriceRet9').fill('35');
+    await page.waitForTimeout(300);
+    await page.locator('#ohdFCXtdPriceRet9').press('Tab');
+    await page.waitForTimeout(300);
+    await page.locator('#ohdFCXtdPriceRet10').fill('66');
+    await page.waitForTimeout(300);
+    await page.locator('#ohdFCXtdPriceRet10').press('Tab');
+    await page.waitForTimeout(300);
+    await page.locator('#ohdFCXtdPriceRet11').fill('999');
     await page.waitForTimeout(300);
     await page.getByRole('button', { name: 'บันทึก' }).click();
     await page.waitForTimeout(5000);
@@ -173,24 +183,26 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(delay);
       await page.getByPlaceholder('กรอกคำค้นหา').press('Enter');
       await page.waitForTimeout(delay);
-      await page.getByRole('cell', { name: 'PP0001' }).nth(1).click();
+      await page.click('#ospClickShowPDTConfig');
       await page.waitForTimeout(delay);
-      await page.getByRole('row', { name: 'PP0001 สินค้าทดสอบระบบ 1 กล่อง PPX0001' }).getByRole('cell', { name: 'PP0001' }).click();
+      await page.click('[name="ordBWStaTopPdt"][value="2"]');
       await page.waitForTimeout(delay);
-      await page.getByRole('cell', { name: 'PP0002' }).nth(1).click();
-      await page.waitForTimeout(delay);
-      await page.getByRole('row', { name: 'PP0002 สินค้าทดสอบระบบ 2 กล่อง PPX0002' }).getByRole('cell', { name: 'PP0002' }).click();
-      await page.waitForTimeout(delay);
-      await page.getByRole('cell', { name: 'PP0003' }).first().click();
-      await page.waitForTimeout(delay);
-      await page.getByRole('cell', { name: 'PP0004' }).nth(1).click();
-      await page.waitForTimeout(delay);
-      await page.getByRole('row', { name: 'PP0004 สินค้าทดสอบระบบ 4 กล่อง PPX0004' }).getByRole('cell', { name: 'PP0004' }).click();
-      await page.waitForTimeout(delay);
-      await page.getByRole('cell', { name: 'PP0005' }).nth(1).click();
-      await page.waitForTimeout(delay);
-      await page.getByRole('row', { name: 'PP0005 สินค้าทดสอบระบบ 5 (ไม่อนุญาตลด) กล่อง PPX0005' }).getByRole('cell', { name: 'PP0005' }).click();
-      await page.waitForTimeout(delay);
+      await page.locator('#oetMaxPage').fill('20');
+      await page.locator('#oetPerPage').fill('20');
+      await page.click('#obtPdtConfigSave');
+      await page.waitForTimeout(2000);
+      await page.click('#otbodyPdtPP000100025');
+      await page.click('#otbodyPdtPP000100007');
+      await page.click('#otbodyPdtPP000200025');
+      await page.click('#otbodyPdtPP000200007');
+      await page.click('#otbodyPdtPP000300025');
+      await page.click('#otbodyPdtPP000300007');
+      await page.click('#otbodyPdtPP000400025');
+      await page.click('#otbodyPdtPP000400007');
+      await page.click('#otbodyPdtPP000500025');
+      await page.click('#otbodyPdtPP000500007');
+      await page.click('#otbodyPdtPP000600025');
+      await page.click('#otbodyPdtPP000600007');
       await page.getByRole('button', { name: 'เลือก', exact: true }).click();
       await page.waitForTimeout(delay);
       await page.locator('#ohdFCXtdPriceRet1').fill('100');
@@ -226,6 +238,14 @@ test('test', async ({ page }) => {
       await page.locator('#ohdFCXtdPriceRet8').press('Tab');
       await page.waitForTimeout(300);
       await page.locator('#ohdFCXtdPriceRet9').fill('35');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet9').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet10').fill('66');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet10').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet11').fill('999');
       await page.waitForTimeout(300);
       await page.getByRole('button', { name: 'บันทึก' }).click();
       await page.waitForTimeout(5000);
@@ -277,12 +297,12 @@ test('test', async ({ page }) => {
           const text1 = await elementsD1.innerText();
           const text2 = await elementsD2.innerText();
           const text3 = await elementsD3.innerText();
-          console.log('\x1b[36m%s\x1b[0m', '', '[ตรวจสอบเอกสาร]' ,'[เลขที่] : ', text1, ' [สถานะ] : ', text2, ' [วันที่อนุมัติ] : ', text3);
+          console.log('\x1b[36m%s\x1b[0m', '', '[ตรวจสอบเอกสาร]', '[เลขที่] : ', text1, ' [สถานะ] : ', text2, ' [วันที่อนุมัติ] : ', text3);
           await page.waitForTimeout(7000);
-        }        
+        }
       }
     }
-    
+
     //await page.pause();
 
   } catch (error) {

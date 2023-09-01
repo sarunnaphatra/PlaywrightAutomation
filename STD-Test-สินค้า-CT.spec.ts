@@ -5,9 +5,10 @@ import { Client } from 'pg';
 test('test', async ({ page }) => {
   const browser = await chromium.launch();
   await chromium.launch({ headless: false, slowMo: 1000 })
-  const productid = 'PP0005'
-  const productid2 = 'PPX0005'
-  const productname = 'สินค้าทดสอบระบบ 5 (ไม่อนุญาตลด)'
+  const productid = 'PP0006'
+  const productid2 = 'PPX0006'
+  //const productname = 'สินค้าทดสอบระบบ 4'
+  const productname = 'สินค้าทดสอบระบบ 6 (ไม่อนุญาตลด)' //116
   const adname = 'STD-Sit-ProforPC '
   //const productid = 'PP0004X'
   const delay = 1000
@@ -113,7 +114,7 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(delay);
       //await page.pause();
       await page.locator('#odvPdtContentInfo1 > div.row > div.col-xs-12.col-sm-7.col-md-8.col-lg-8 > div:nth-child(11) > div > div > div > div:nth-child(2) > div > div:nth-child(2) > label > span').click();
-      //await page.getByText('อนุญาตลด').click();   //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< เปิดใช้งานบรรทัดนี้เพื่อสร้างสินค้าไม่อนุญาตลด
+      //await page.getByText('อนุญาตลด').click();   //Ref.166 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< เปิดใช้งานบรรทัดนี้เพื่อสร้างสินค้าไม่อนุญาตลด
       //await page.pause();
       await page.waitForTimeout(delay);
       //กดบันทึกสร้างสินค้า      
