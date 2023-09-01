@@ -265,7 +265,6 @@ test('test', async ({ page }) => {
         const text3 = await elements3.innerText();
         console.log('\x1b[36m%s\x1b[0m', '', '[เอกสารหมายเลข] : ', storedValue, ' [ผู้สร้างเอกสาร] : ', text1, ' [สถานะเอกสาร] : ', text2, ' [สถานะอนุมัติ] : ', text3);
       }
-      
       //-----------------------------------------------------------------------------------------------------------------------------------
       console.log('\x1b[36m%s\x1b[0m', '[ทำการสร้างเอกสารอีกครั้ง เพื่อทดสอบการแก้ไขและอนุมัติเอกสาร] ');
       await page.waitForTimeout(delay);
@@ -273,13 +272,10 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(delay);
       await page.getByRole('button', { name: '+' }).click();
       await page.waitForTimeout(delay);
-      //await page.getByRole('combobox', { name: 'รหัสสินค้า' }).click();
       await page.locator('#odvModalsectionBodyPDT > div > div:nth-child(1) > div > div > div > div.col-lg-2.col-md-2 > div > div > button > span > span').click();
       await page.waitForTimeout(delay);
       await page.locator('#bs-select-23-0 > span').click();
       await page.waitForTimeout(delay);
-      // await page.locator('#bs-select-11-0').click();
-      // await page.waitForTimeout(delay);
       await page.getByPlaceholder('กรอกคำค้นหา').click();
       await page.waitForTimeout(delay);
       await page.getByPlaceholder('กรอกคำค้นหา').fill('สินค้าทดสอบ');
@@ -422,7 +418,6 @@ test('test', async ({ page }) => {
         
         
 
-        await page.pause();
       }
     }
 
