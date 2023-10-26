@@ -5,11 +5,7 @@ import { Client } from 'pg';
 test('test', async ({ page }) => {
   const browser = await chromium.launch();
   await chromium.launch({ headless: false, slowMo: 1000 })
-  const productid = 'PP0005'
-  const productid2 = 'PPX0005'
-  const productname = 'สินค้าทดสอบระบบ 5 (ไม่อนุญาตลด)'
   const adname = 'STD-Sit-ProforPC '
-  //const productid = 'PP0004X'
   const delay = 1000
   test.setTimeout(5000000);
   await test.slow();
