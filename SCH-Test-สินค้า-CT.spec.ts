@@ -128,11 +128,11 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(delay);
       await page.getByRole('textbox', { name: 'กรอกคำค้นหา' }).click();
       await page.waitForTimeout(delay);
-      await page.getByRole('textbox', { name: 'กรอกคำค้นหา' }).fill('00007');
+      await page.getByRole('textbox', { name: 'กรอกคำค้นหา' }).fill('00002');
       await page.waitForTimeout(delay);
       await page.getByRole('button', { name: '' }).click();
       await page.waitForTimeout(delay);
-      await page.getByRole('cell', { name: '00007' }).click();
+      await page.getByRole('cell', { name: '00002' }).click();
       await page.waitForTimeout(delay);
       await page.getByRole('button', { name: 'เลือก', exact: true }).click();
       await page.waitForTimeout(delay);

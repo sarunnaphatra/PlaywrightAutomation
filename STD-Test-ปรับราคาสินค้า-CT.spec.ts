@@ -124,6 +124,10 @@ test('test', async ({ page }) => {
     await page.waitForTimeout(300);
     await page.locator('#ohdFCXtdPriceRet11').fill('999');
     await page.waitForTimeout(300);
+    await page.locator('#ohdFCXtdPriceRet11').press('Tab');
+    await page.waitForTimeout(300);
+    await page.locator('#ohdFCXtdPriceRet12').fill('150');
+    await page.waitForTimeout(300);
     await page.getByRole('button', { name: 'บันทึก' }).click();
     await page.waitForTimeout(5000);
     console.log('\x1b[32m%s\x1b[0m', '[สร้างเอกสารเรียบร้อย] ');
@@ -247,6 +251,10 @@ test('test', async ({ page }) => {
       await page.waitForTimeout(300);
       await page.locator('#ohdFCXtdPriceRet11').fill('999');
       await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet11').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet12').fill('150');
+      await page.waitForTimeout(300);
       await page.getByRole('button', { name: 'บันทึก' }).click();
       await page.waitForTimeout(5000);
       console.log('\x1b[32m%s\x1b[0m', '[สร้างเอกสารเรียบร้อย] ');
@@ -260,10 +268,27 @@ test('test', async ({ page }) => {
         await page.waitForTimeout(300);
         await page.click('#obtBtnSpaCancel');
         await page.waitForTimeout(delay);
-        console.log('\x1b[32m%s\x1b[0m', '[การยกเลิกเอกสารเรียบร้อย]');
+        console.log('\x1b[32m%s\x1b[0m', '[ยกเลิกเอกสารเรียบร้อย]');
         await page.waitForTimeout(delay);
         await page.click('#obtBtnBack');
         await page.waitForTimeout(5000);
+
+        const Docsta1 = '//*[@id="otrPdtSpa0"]/td[3]';
+        const Docsta2 = '//*[@id="otrPdtSpa0"]/td[6]/label';
+        const Docsta3 = '//*[@id="otrPdtSpa0"]/td[4]';
+        //const elements0 = await page.$(DocNumber);
+        const elementsD1 = await page.$(Docsta1);
+        const elementsD2 = await page.$(Docsta2);
+        const elementsD3 = await page.$(Docsta3);
+        if (elementsD1 && elementsD2 && elementsD3) {
+          //const text0 = await elements0.innerText();
+          const text1 = await elementsD1.innerText();
+          const text2 = await elementsD2.innerText();
+          const text3 = await elementsD3.innerText();
+          console.log('\x1b[36m%s\x1b[0m', '-', '[ตรวจสอบเอกสาร]', '[เลขที่] : ', text1, ' [สถานะ] : ', text2, ' [วันที่ยกเลิก] : ', text3);
+          await page.waitForTimeout(7000);
+
+        }
       }
       //-----------------------------------------------------------------------------------------------------------------------------------
       console.log('\x1b[36m%s\x1b[0m', '[ทำการสร้างเอกสารอีกครั้ง เพื่อทดสอบการแก้ไขและอนุมัติเอกสาร] ');
@@ -347,6 +372,10 @@ test('test', async ({ page }) => {
       await page.locator('#ohdFCXtdPriceRet10').press('Tab');
       await page.waitForTimeout(300);
       await page.locator('#ohdFCXtdPriceRet11').fill('999');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet11').press('Tab');
+      await page.waitForTimeout(300);
+      await page.locator('#ohdFCXtdPriceRet12').fill('150');
       await page.waitForTimeout(300);
       await page.getByRole('button', { name: 'บันทึก' }).click();
       await page.waitForTimeout(5000);
