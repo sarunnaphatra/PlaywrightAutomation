@@ -536,7 +536,7 @@ async function VerifyVat() {
                 const ExcludeTotal: number = (A+B); //Value 600+42
                 const ExpectExcludeTotal = ExcludeTotal.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); //<<< Show 642.00
                  //-------------------------------------------------------------------------------------------------------
-                 //TEST
+          
              
                   
                 //Include
