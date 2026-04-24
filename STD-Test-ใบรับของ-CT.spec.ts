@@ -18,6 +18,7 @@ test('test', async ({ page }) =>
     const HeadName ='Adasoft'
  
     //บ้านไฟฟ้า 
+    //Update
     //const pageUrl = 'https://sit.ada-soft.com/AdaBanfaifa/login'
     //const username = '009'
     //const password = '12345678'
@@ -379,7 +380,7 @@ test('test', async ({ page }) =>
 
             
             } catch (error) {
-                console.error(error.message); 
+                console.error((error as Error).message);
             }
             await page.pause();
 
